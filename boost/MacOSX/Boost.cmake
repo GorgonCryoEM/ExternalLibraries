@@ -12,9 +12,10 @@ endif()
 
 set(Source_Dir ${CMAKE_SOURCE_DIR}/ExternalLibraries/boost_src/bsrc)
 
-#set(Boost_Bootstrap_CMD "${Boost_Bootstrap_CMD} --prefix=${CMAKE_SOURCE_DIR}/ExternalLibraries/boost_out --with-libraries=python")
+set(Boost_Bootstrap_CMD "${Boost_Bootstrap_CMD} --prefix=${CMAKE_SOURCE_DIR}/ExternalLibraries/boost_out --with-libraries=python")
 
 #set( Boost_b2_CMD "${Boost_b2_CMD} install" )
+set( Boost_b2_CMD ${Boost_b2_CMD} )
 
 #message(${Boost_Bootstrap_CMD})
 
@@ -34,14 +35,14 @@ ExternalProject_Add( Bust
  #   #[TIMEOUT seconds]           # Time allowed for file download operations
  #--Configure step-------------
  SOURCE_DIR ${Source_Dir}            # Source dir to be used for build
- CONFIGURE_COMMAND   "${Source_Dir}/${Boost_Bootstrap_CMD} --prefix=${CMAKE_SOURCE_DIR}/ExternalLibraries/boost_out/" # Build tree configuration command
+ CONFIGURE_COMMAND  ${Source_Dir}/bootstrap.sh --prefix=${CMAKE_SOURCE_DIR}/ExternalLibraries/boost_out/ --with-libraries=python # Build tree configuration command
  #--Build step-----------------
- #[BINARY_DIR dir]            # Specify build dir location
- #[BUILD_COMMAND cmd...]      # Command to drive the native build
+ BINARY_DIR   ${Source_Dir}          # Specify build dir location
+ BUILD_COMMAND ""      # Command to drive the native build
  #[BUILD_IN_SOURCE 1]         # Use source dir for build dir
  #--Install step---------------
- #[INSTALL_DIR dir]           # Installation prefix
- # INSTALL_COMMAND ${Boost_b2_CMD}    # Command to drive install after build
+ INSTALL_DIR ${Source_Dir}           # Installation prefix
+  INSTALL_COMMAND ${Boost_b2_CMD}    # Command to drive install after build
  #--Output logging-------------
   LOG_DOWNLOAD 1            # Wrap download in script to log output
   LOG_UPDATE 1              # Wrap update in script to log output
