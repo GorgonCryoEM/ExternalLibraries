@@ -11,7 +11,6 @@ else()
 endif()
 
 # Set variables
-set(Source_Dir ${CMAKE_SOURCE_DIR}/ExternalLibraries/boost_src/bsrc)
 
 include(ExternalProject)
 
