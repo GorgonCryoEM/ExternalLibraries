@@ -14,7 +14,7 @@ endif()
 
 include(ExternalProject)
 
-ExternalProject_Add( Boost.dependency
+ExternalProject_Add( Boost
 	PREFIX ${CMAKE_CURRENT_LIST_DIR}/boost
  #--Download step--------------
 #    DOWNLOAD_DIR           # Directory to store downloaded files
