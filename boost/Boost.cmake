@@ -10,14 +10,8 @@ else()
   endif()
 endif()
 
+# Set variables
 set(Source_Dir ${CMAKE_SOURCE_DIR}/ExternalLibraries/boost_src/bsrc)
-
-set(Boost_Bootstrap_CMD "${Boost_Bootstrap_CMD} --prefix=${CMAKE_SOURCE_DIR}/ExternalLibraries/boost_out --with-libraries=python")
-
-#set( Boost_b2_CMD "${Boost_b2_CMD} install" )
-set( Boost_b2_CMD ${Boost_b2_CMD} )
-
-#message(${Boost_Bootstrap_CMD})
 
 include(ExternalProject)
 
