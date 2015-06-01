@@ -24,11 +24,12 @@ ExternalProject_Add( Boost
     URL_MD5 5a5d5614d9a07672e1ab2a250b5defc5 # Equivalent to URL_HASH MD5=md5
  #--Configure step-------------
 # SOURCE_DIR ${Source_Dir}            # Source dir to be used for build
-# CONFIGURE_COMMAND  ${Source_Dir}/bootstrap.sh --prefix=${CMAKE_SOURCE_DIR}/ExternalLibraries/boost_out/ --with-libraries=python # Build tree configuration command
+#    CONFIGURE_COMMAND  ${Boost_Bootstrap_CMD} --prefix=${CMAKE_SOURCE_DIR}/ExternalLibraries/boost_out/ --with-libraries=python # Build tree configuration command
+    CONFIGURE_COMMAND  ${Boost_Bootstrap_CMD} --with-libraries=python # Build tree configuration command
  #--Build step-----------------
 # BINARY_DIR   ${Source_Dir}          # Specify build dir location
 # BUILD_COMMAND ""      # Command to drive the native build
- #[BUILD_IN_SOURCE 1]         # Use source dir for build dir
+    BUILD_IN_SOURCE 1         # Use source dir for build dir
  #--Install step---------------
 # INSTALL_DIR ${Source_Dir}           # Installation prefix
 #  INSTALL_COMMAND ${Boost_b2_CMD}    # Command to drive install after build
