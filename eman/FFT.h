@@ -161,11 +161,7 @@ namespace EMAN {
 
 #ifdef FFTW3
 
-#ifdef _WIN32
-	#include <FFTW\Win\fftw3.h>
-#else 
-	#include <fftw3.h>
-#endif
+#include <fftw3.h>
 
 namespace EMAN
 {
