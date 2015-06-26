@@ -3,7 +3,7 @@ if(ENABLE_CMAKE_DEBUG_OUTPUT)
 endif()
 #find_package(PythonInterp)
 
-set(python_root           ${GORGON_EXTERNAL_LIBRARIES_DIR}/python  )
+set(python_root           ${GORGON_EXTERNAL_LIBRARIES_DIR}/  )
 set(python_librarydir     ${python_root}/lib     )
 set(python_includedir     ${python_root}/include )
 

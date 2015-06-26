@@ -7,7 +7,7 @@ set_property(CACHE BOOST_LOCATION_OPTIONS PROPERTY STRINGS Gorgon System)
 # Set variables
 set(boost_version 1.44)
 
-set(boost_root           ${CMAKE_CURRENT_BINARY_DIR}/boost  )
+set(boost_root           ${CMAKE_CURRENT_BINARY_DIR}/  )
 set(boost_librarydir     ${boost_root}/lib     )
 set(boost_includedir     ${boost_root}/include )
 
