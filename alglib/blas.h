@@ -24,19 +24,19 @@ http://www.fsf.org/licensing/licenses
 #include "ap.h"
 #include "ialglib.h"
 
-double vectornorm2(const ap::real_1d_array& x, int i1, int i2);
+inline double vectornorm2(const ap::real_1d_array& x, int i1, int i2);
 
 
-int vectoridxabsmax(const ap::real_1d_array& x, int i1, int i2);
+inline int vectoridxabsmax(const ap::real_1d_array& x, int i1, int i2);
 
 
-int columnidxabsmax(const ap::real_2d_array& x, int i1, int i2, int j);
+inline int columnidxabsmax(const ap::real_2d_array& x, int i1, int i2, int j);
 
 
-int rowidxabsmax(const ap::real_2d_array& x, int j1, int j2, int i);
+inline int rowidxabsmax(const ap::real_2d_array& x, int j1, int j2, int i);
 
 
-double upperhessenberg1norm(const ap::real_2d_array& a,
+inline double upperhessenberg1norm(const ap::real_2d_array& a,
      int i1,
      int i2,
      int j1,
@@ -44,7 +44,7 @@ double upperhessenberg1norm(const ap::real_2d_array& a,
      ap::real_1d_array& work);
 
 
-void copymatrix(const ap::real_2d_array& a,
+inline void copymatrix(const ap::real_2d_array& a,
      int is1,
      int is2,
      int js1,
@@ -56,7 +56,7 @@ void copymatrix(const ap::real_2d_array& a,
      int jd2);
 
 
-void inplacetranspose(ap::real_2d_array& a,
+inline void inplacetranspose(ap::real_2d_array& a,
      int i1,
      int i2,
      int j1,
@@ -64,7 +64,7 @@ void inplacetranspose(ap::real_2d_array& a,
      ap::real_1d_array& work);
 
 
-void copyandtranspose(const ap::real_2d_array& a,
+inline void copyandtranspose(const ap::real_2d_array& a,
      int is1,
      int is2,
      int js1,
@@ -76,7 +76,7 @@ void copyandtranspose(const ap::real_2d_array& a,
      int jd2);
 
 
-void matrixvectormultiply(const ap::real_2d_array& a,
+inline void matrixvectormultiply(const ap::real_2d_array& a,
      int i1,
      int i2,
      int j1,
@@ -92,10 +92,10 @@ void matrixvectormultiply(const ap::real_2d_array& a,
      double beta);
 
 
-double pythag2(double x, double y);
+inline double pythag2(double x, double y);
 
 
-void matrixmatrixmultiply(const ap::real_2d_array& a,
+inline void matrixmatrixmultiply(const ap::real_2d_array& a,
      int ai1,
      int ai2,
      int aj1,
@@ -139,7 +139,7 @@ http://www.fsf.org/licensing/licenses
 
 //#include <stdafx.h>
 
-double vectornorm2(const ap::real_1d_array& x, int i1, int i2)
+inline double vectornorm2(const ap::real_1d_array& x, int i1, int i2)
 {
     double result;
     int n;
@@ -182,7 +182,7 @@ double vectornorm2(const ap::real_1d_array& x, int i1, int i2)
 }
 
 
-int vectoridxabsmax(const ap::real_1d_array& x, int i1, int i2)
+inline int vectoridxabsmax(const ap::real_1d_array& x, int i1, int i2)
 {
     int result;
     int i;
