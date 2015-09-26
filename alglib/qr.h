@@ -71,7 +71,7 @@ so that v(0:i-1) = 0, v(i) = 1, v(i+1:m-1) stored in A(i+1:m-1,i).
      Translation from FORTRAN to pseudocode (AlgoPascal)
      by Sergey Bochkanov, ALGLIB project, 2005-2007.
 *************************************************************************/
-void rmatrixqr(ap::real_2d_array& a, int m, int n, ap::real_1d_array& tau);
+inline void rmatrixqr(ap::real_2d_array& a, int m, int n, ap::real_1d_array& tau);
 
 
 /*************************************************************************
@@ -94,7 +94,7 @@ Output parameters:
   -- ALGLIB --
      Copyright 2005 by Bochkanov Sergey
 *************************************************************************/
-void rmatrixqrunpackq(const ap::real_2d_array& a,
+inline void rmatrixqrunpackq(const ap::real_2d_array& a,
      int m,
      int n,
      const ap::real_1d_array& tau,
@@ -117,7 +117,7 @@ Output parameters:
   -- ALGLIB --
      Copyright 2005 by Bochkanov Sergey
 *************************************************************************/
-void rmatrixqrunpackr(const ap::real_2d_array& a,
+inline void rmatrixqrunpackr(const ap::real_2d_array& a,
      int m,
      int n,
      ap::real_2d_array& r);
@@ -126,7 +126,7 @@ void rmatrixqrunpackr(const ap::real_2d_array& a,
 /*************************************************************************
 Obsolete 1-based subroutine. See RMatrixQR for 0-based replacement.
 *************************************************************************/
-void qrdecomposition(ap::real_2d_array& a,
+inline void qrdecomposition(ap::real_2d_array& a,
      int m,
      int n,
      ap::real_1d_array& tau);
@@ -135,7 +135,7 @@ void qrdecomposition(ap::real_2d_array& a,
 /*************************************************************************
 Obsolete 1-based subroutine. See RMatrixQRUnpackQ for 0-based replacement.
 *************************************************************************/
-void unpackqfromqr(const ap::real_2d_array& a,
+inline void unpackqfromqr(const ap::real_2d_array& a,
      int m,
      int n,
      const ap::real_1d_array& tau,
@@ -146,7 +146,7 @@ void unpackqfromqr(const ap::real_2d_array& a,
 /*************************************************************************
 Obsolete 1-based subroutine. See RMatrixQR for 0-based replacement.
 *************************************************************************/
-void qrdecompositionunpacked(ap::real_2d_array a,
+inline void qrdecompositionunpacked(ap::real_2d_array a,
      int m,
      int n,
      ap::real_2d_array& q,
@@ -219,7 +219,7 @@ so that v(0:i-1) = 0, v(i) = 1, v(i+1:m-1) stored in A(i+1:m-1,i).
      Translation from FORTRAN to pseudocode (AlgoPascal)
      by Sergey Bochkanov, ALGLIB project, 2005-2007.
 *************************************************************************/
-void rmatrixqr(ap::real_2d_array& a, int m, int n, ap::real_1d_array& tau)
+inline void rmatrixqr(ap::real_2d_array& a, int m, int n, ap::real_1d_array& tau)
 {
     ap::real_1d_array work;
     ap::real_1d_array t;
@@ -284,7 +284,7 @@ Output parameters:
   -- ALGLIB --
      Copyright 2005 by Bochkanov Sergey
 *************************************************************************/
-void rmatrixqrunpackq(const ap::real_2d_array& a,
+inline void rmatrixqrunpackq(const ap::real_2d_array& a,
      int m,
      int n,
      const ap::real_1d_array& tau,
@@ -358,7 +358,7 @@ Output parameters:
   -- ALGLIB --
      Copyright 2005 by Bochkanov Sergey
 *************************************************************************/
-void rmatrixqrunpackr(const ap::real_2d_array& a,
+inline void rmatrixqrunpackr(const ap::real_2d_array& a,
      int m,
      int n,
      ap::real_2d_array& r)
@@ -390,7 +390,7 @@ void rmatrixqrunpackr(const ap::real_2d_array& a,
 /*************************************************************************
 Obsolete 1-based subroutine. See RMatrixQR for 0-based replacement.
 *************************************************************************/
-void qrdecomposition(ap::real_2d_array& a,
+inline void qrdecomposition(ap::real_2d_array& a,
      int m,
      int n,
      ap::real_1d_array& tau)
@@ -439,7 +439,7 @@ void qrdecomposition(ap::real_2d_array& a,
 /*************************************************************************
 Obsolete 1-based subroutine. See RMatrixQRUnpackQ for 0-based replacement.
 *************************************************************************/
-void unpackqfromqr(const ap::real_2d_array& a,
+inline void unpackqfromqr(const ap::real_2d_array& a,
      int m,
      int n,
      const ap::real_1d_array& tau,
@@ -503,7 +503,7 @@ void unpackqfromqr(const ap::real_2d_array& a,
 /*************************************************************************
 Obsolete 1-based subroutine. See RMatrixQR for 0-based replacement.
 *************************************************************************/
-void qrdecompositionunpacked(ap::real_2d_array a,
+inline void qrdecompositionunpacked(ap::real_2d_array a,
      int m,
      int n,
      ap::real_2d_array& q,

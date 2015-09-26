@@ -77,7 +77,7 @@ public:
 Dot product
 ********************************************************************/
 template<class T>
-T vdotproduct(const_raw_vector<T> v1, const_raw_vector<T> v2)
+inline T vdotproduct(const_raw_vector<T> v1, const_raw_vector<T> v2)
 {
     ap_error::make_assertion(v1.GetLength()==v2.GetLength());
     if( v1.GetStep()==1 && v2.GetStep()==1 )
@@ -133,7 +133,7 @@ T vdotproduct(const_raw_vector<T> v1, const_raw_vector<T> v2)
 Dot product, another form
 ********************************************************************/
 template<class T, class INTTYPE>
-T _vdotproduct(const T *v1, const T *v2, INTTYPE N)
+inline T _vdotproduct(const T *v1, const T *v2, INTTYPE N)
 {
     T r = 0;
     int imax = N/4;
@@ -154,7 +154,7 @@ T _vdotproduct(const T *v1, const T *v2, INTTYPE N)
 Copy one vector into another
 ********************************************************************/
 template<class T>
-void vmove(raw_vector<T> vdst, const_raw_vector<T> vsrc)
+inline void vmove(raw_vector<T> vdst, const_raw_vector<T> vsrc)
 {
     ap_error::make_assertion(vdst.GetLength()==vsrc.GetLength());
     if( vdst.GetStep()==1 && vsrc.GetStep()==1 )
@@ -212,7 +212,7 @@ void vmove(raw_vector<T> vdst, const_raw_vector<T> vsrc)
 vmove, abother form
 ********************************************************************/
 template<class T, class INTTYPE>
-void _vmove(T *vdst, const T* vsrc, INTTYPE N)
+inline void _vmove(T *vdst, const T* vsrc, INTTYPE N)
 {
     int imax = N/2;
     int i;
@@ -232,7 +232,7 @@ void _vmove(T *vdst, const T* vsrc, INTTYPE N)
 Copy one vector multiplied by -1 into another.
 ********************************************************************/
 template<class T>
-void vmoveneg(raw_vector<T> vdst, const_raw_vector<T> vsrc)
+inline void vmoveneg(raw_vector<T> vdst, const_raw_vector<T> vsrc)
 {
     ap_error::make_assertion(vdst.GetLength()==vsrc.GetLength());
     if( vdst.GetStep()==1 && vsrc.GetStep()==1 )
@@ -290,7 +290,7 @@ void vmoveneg(raw_vector<T> vdst, const_raw_vector<T> vsrc)
 vmoveneg, another form
 ********************************************************************/
 template<class T, class INTTYPE>
-void _vmoveneg(T *vdst, const T *vsrc, INTTYPE N)
+inline void _vmoveneg(T *vdst, const T *vsrc, INTTYPE N)
 {
     T *p1 = vdst;
     const T *p2 = vsrc;
@@ -312,7 +312,7 @@ void _vmoveneg(T *vdst, const T *vsrc, INTTYPE N)
 Copy one vector multiplied by a number into another vector.
 ********************************************************************/
 template<class T, class T2>
-void vmove(raw_vector<T> vdst, const_raw_vector<T> vsrc, T2 alpha)
+inline void vmove(raw_vector<T> vdst, const_raw_vector<T> vsrc, T2 alpha)
 {
     ap_error::make_assertion(vdst.GetLength()==vsrc.GetLength());
     if( vdst.GetStep()==1 && vsrc.GetStep()==1 )
@@ -372,7 +372,7 @@ void vmove(raw_vector<T> vdst, const_raw_vector<T> vsrc, T2 alpha)
 vmove, another form
 ********************************************************************/
 template<class T, class T2, class INTTYPE>
-void _vmove(T *vdst, const T *vsrc, INTTYPE N, T2 alpha)
+inline void _vmove(T *vdst, const T *vsrc, INTTYPE N, T2 alpha)
 {
     T *p1 = vdst;
     const T *p2 = vsrc;
@@ -396,7 +396,7 @@ void _vmove(T *vdst, const T *vsrc, INTTYPE N, T2 alpha)
 Vector addition
 ********************************************************************/
 template<class T>
-void vadd(raw_vector<T> vdst, const_raw_vector<T> vsrc)
+inline void vadd(raw_vector<T> vdst, const_raw_vector<T> vsrc)
 {
     ap_error::make_assertion(vdst.GetLength()==vsrc.GetLength());
     if( vdst.GetStep()==1 && vsrc.GetStep()==1 )
@@ -456,7 +456,7 @@ void vadd(raw_vector<T> vdst, const_raw_vector<T> vsrc)
 vadd, another form
 ********************************************************************/
 template<class T, class INTTYPE>
-void _vadd(T *vdst, const T *vsrc, INTTYPE N)
+inline void _vadd(T *vdst, const T *vsrc, INTTYPE N)
 {
     T *p1 = vdst;
     const T *p2 = vsrc;
@@ -480,7 +480,7 @@ void _vadd(T *vdst, const T *vsrc, INTTYPE N)
 Add one vector multiplied by a number to another vector.
 ********************************************************************/
 template<class T, class T2>
-void vadd(raw_vector<T> vdst, const_raw_vector<T> vsrc, T2 alpha)
+inline void vadd(raw_vector<T> vdst, const_raw_vector<T> vsrc, T2 alpha)
 {
     ap_error::make_assertion(vdst.GetLength()==vsrc.GetLength());
     if( vdst.GetStep()==1 && vsrc.GetStep()==1 )
@@ -540,7 +540,7 @@ void vadd(raw_vector<T> vdst, const_raw_vector<T> vsrc, T2 alpha)
 vadd, another form
 ********************************************************************/
 template<class T, class T2, class INTTYPE>
-void _vadd(T *vdst, const T *vsrc, INTTYPE N, T2 alpha)
+inline void _vadd(T *vdst, const T *vsrc, INTTYPE N, T2 alpha)
 {
     T *p1 = vdst;
     const T *p2 = vsrc;
@@ -564,7 +564,7 @@ void _vadd(T *vdst, const T *vsrc, INTTYPE N, T2 alpha)
 Vector subtraction
 ********************************************************************/
 template<class T>
-void vsub(raw_vector<T> vdst, const_raw_vector<T> vsrc)
+inline void vsub(raw_vector<T> vdst, const_raw_vector<T> vsrc)
 {
     ap_error::make_assertion(vdst.GetLength()==vsrc.GetLength());
     if( vdst.GetStep()==1 && vsrc.GetStep()==1 )
@@ -624,7 +624,7 @@ void vsub(raw_vector<T> vdst, const_raw_vector<T> vsrc)
 vsub, another form
 ********************************************************************/
 template<class T, class INTTYPE>
-void _vsub(T *vdst, const T *vsrc, INTTYPE N)
+inline void _vsub(T *vdst, const T *vsrc, INTTYPE N)
 {
     T *p1 = vdst;
     const T *p2 = vsrc;
@@ -648,7 +648,7 @@ void _vsub(T *vdst, const T *vsrc, INTTYPE N)
 Subtract one vector multiplied by a number from another vector.
 ********************************************************************/
 template<class T, class T2>
-void vsub(raw_vector<T> vdst, const_raw_vector<T> vsrc, T2 alpha)
+inline void vsub(raw_vector<T> vdst, const_raw_vector<T> vsrc, T2 alpha)
 {
     vadd(vdst, vsrc, -alpha);
 }
@@ -658,7 +658,7 @@ void vsub(raw_vector<T> vdst, const_raw_vector<T> vsrc, T2 alpha)
 vsub, another form
 ********************************************************************/
 template<class T, class T2, class INTTYPE>
-void _vsub(T *vdst, const T *vsrc, INTTYPE N, T2 alpha)
+inline void _vsub(T *vdst, const T *vsrc, INTTYPE N, T2 alpha)
 {
     _vadd(vdst, vsrc, N, -alpha);
 }
@@ -668,7 +668,7 @@ void _vsub(T *vdst, const T *vsrc, INTTYPE N, T2 alpha)
 In-place vector multiplication
 ********************************************************************/
 template<class T, class T2>
-void vmul(raw_vector<T> vdst, T2 alpha)
+inline void vmul(raw_vector<T> vdst, T2 alpha)
 {
     if( vdst.GetStep()==1 )
     {
@@ -721,7 +721,7 @@ void vmul(raw_vector<T> vdst, T2 alpha)
 vmul, another form
 ********************************************************************/
 template<class T, class T2, class INTTYPE>
-void _vmul(T *vdst, INTTYPE N, T2 alpha)
+inline void _vmul(T *vdst, INTTYPE N, T2 alpha)
 {
     T *p1 = vdst;
     int imax = N/4;
