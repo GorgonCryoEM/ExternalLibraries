@@ -57,7 +57,7 @@ Output parameters:
 
 Utility subroutine.
 *************************************************************************/
-void applyrotationsfromtheleft(bool isforward,
+inline void applyrotationsfromtheleft(bool isforward,
      int m1,
      int m2,
      int n1,
@@ -142,7 +142,7 @@ Output parameters:
 
 Utility subroutine.
 *************************************************************************/
-void applyrotationsfromtheleft(bool isforward,
+inline void applyrotationsfromtheleft(bool isforward,
      int m1,
      int m2,
      int n1,
@@ -278,7 +278,7 @@ Output parameters:
 
 Utility subroutine.
 *************************************************************************/
-void applyrotationsfromtheright(bool isforward,
+inline void applyrotationsfromtheright(bool isforward,
      int m1,
      int m2,
      int n1,
@@ -393,7 +393,7 @@ The subroutine generates the elementary rotation, so that:
 
 CS**2 + SN**2 = 1
 *************************************************************************/
-void generaterotation(double f, double g, double& cs, double& sn, double& r)
+inline void generaterotation(double f, double g, double& cs, double& sn, double& r)
 {
     double f1;
     double g1;
@@ -430,7 +430,7 @@ void generaterotation(double f, double g, double& cs, double& sn, double& r)
 }
 
 
-static void testrotations()
+inline static void testrotations()
 {
     ap::real_2d_array al1;
     ap::real_2d_array al2;
