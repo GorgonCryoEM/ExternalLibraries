@@ -658,8 +658,8 @@ void rmatrixbdmultiplybyq(const ap::real_2d_array& qp,
     {
         return;
     }
-    ap::ap_error::make_assertion(fromtheright&&zcolumns==m||!fromtheright&&zrows==m, "RMatrixBDMultiplyByQ: incorrect Z size!");
     
+    ap::ap_error::make_assertion((fromtheright&&zcolumns==m)||(!fromtheright&&zrows==m), "RMatrixBDMultiplyByQ: incorrect Z size!");
     //
     // init
     //
@@ -881,8 +881,8 @@ void rmatrixbdmultiplybyp(const ap::real_2d_array& qp,
     {
         return;
     }
-    ap::ap_error::make_assertion(fromtheright&&zcolumns==n||!fromtheright&&zrows==n, "RMatrixBDMultiplyByP: incorrect Z size!");
     
+    ap::ap_error::make_assertion((fromtheright&&zcolumns==n)||(!fromtheright&&zrows==n), "RMatrixBDMultiplyByP: incorrect Z size!");
     //
     // init
     //
@@ -1281,8 +1281,8 @@ void multiplybyqfrombidiagonal(const ap::real_2d_array& qp,
     {
         return;
     }
-    ap::ap_error::make_assertion(fromtheright&&zcolumns==m||!fromtheright&&zrows==m, "MultiplyByQFromBidiagonal: incorrect Z size!");
     
+    ap::ap_error::make_assertion((fromtheright&&zcolumns==m)||(!fromtheright&&zrows==m), "MultiplyByQFromBidiagonal: incorrect Z size!");
     //
     // init
     //
@@ -1492,8 +1492,8 @@ void multiplybypfrombidiagonal(const ap::real_2d_array& qp,
     {
         return;
     }
-    ap::ap_error::make_assertion(fromtheright&&zcolumns==n||!fromtheright&&zrows==n, "MultiplyByQFromBidiagonal: incorrect Z size!");
     
+    ap::ap_error::make_assertion((fromtheright&&zcolumns==n)||(!fromtheright&&zrows==n), "MultiplyByQFromBidiagonal: incorrect Z size!");
     //
     // init
     //
