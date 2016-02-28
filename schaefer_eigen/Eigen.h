@@ -84,10 +84,10 @@ void qr ( float eqs[][4], int num = 4, float tol = 0.000001f );
 int estimateRank ( float *a );
 
 
-int method = 3;
+static int method = 3;
 
 // for reducing two upper triangular systems of equations into 1
-void qr ( float *mat1, float *mat2, float *rvalue )
+inline void qr ( float *mat1, float *mat2, float *rvalue )
 {
 	int i, j;
 	float temp1 [ 8 ] [ 4 ];
@@ -110,7 +110,7 @@ void qr ( float *mat1, float *mat2, float *rvalue )
 }
 
 // WARNING: destroys eqs in the process
-void qr ( float eqs[][4], int num, float *rvalue )
+inline void qr ( float eqs[][4], int num, float *rvalue )
 {
 	int i, j, k;
 
@@ -130,7 +130,7 @@ void qr ( float eqs[][4], int num, float *rvalue )
 	}
 }
 
-void qr ( float eqs[][4], int num, float tol )
+inline void qr ( float eqs[][4], int num, float tol )
 {
 	int i, j, k;
 	float a, b, mag, temp;
@@ -182,7 +182,7 @@ void qr ( float eqs[][4], int num, float tol )
 
 }
 
-void jacobi ( float u[][3], float d[], float v[][3] )
+inline void jacobi ( float u[][3], float d[], float v[][3] )
 {
 	int j, iq, ip, i;
 	float tresh, theta, tau, t, sm, s, h, g, c, b [ 3 ], z [ 3 ];
@@ -379,7 +379,7 @@ void jacobi ( float u[][3], float d[], float v[][3] )
 	exit ( 1 );
 }
 
-int estimateRank ( float *a )
+inline int estimateRank ( float *a )
 {
 	float w [ 3 ];
 	float u [ 3 ] [ 3 ];
@@ -417,7 +417,7 @@ int estimateRank ( float *a )
 
 }
 
-void matInverse ( float mat[][3], float midpoint[], float rvalue[][3], float w[], float u[][3] )
+inline void matInverse ( float mat[][3], float midpoint[], float rvalue[][3], float w[], float u[][3] )
 {
 	// there is an implicit assumption that mat is symmetric and real
 	// U and V in the SVD will then be the same matrix whose rows are the eigenvectors of mat
@@ -477,7 +477,7 @@ void matInverse ( float mat[][3], float midpoint[], float rvalue[][3], float w[]
 					w [ 2 ] * u [ 2 ] [ 2 ] * u [ 2 ] [ 2 ];
 }
 
-float calcError ( float a[][3], float b[], float btb, float point[] )
+inline float calcError ( float a[][3], float b[], float btb, float point[] )
 {
 	float rvalue = btb;
  
@@ -489,7 +489,7 @@ float calcError ( float a[][3], float b[], float btb, float point[] )
 	return rvalue;
 }
 
-float *calcNormal ( float halfA[], float norm[], float expectedNorm[] )
+inline float *calcNormal ( float halfA[], float norm[], float expectedNorm[] )
 {
 /*
 	float a [ 3 ] [ 3 ];
@@ -546,7 +546,7 @@ float *calcNormal ( float halfA[], float norm[], float expectedNorm[] )
 	}
 }
 
-void descent ( float A[][3], float B[], float guess[], BoundingBoxf *box )
+inline void descent ( float A[][3], float B[], float guess[], BoundingBoxf *box )
 {
 	int i;
 	float r [ 3 ];
@@ -654,7 +654,7 @@ void descent ( float A[][3], float B[], float guess[], BoundingBoxf *box )
 */
 }
 
-float calcPoint ( float halfA[], float b[], float btb, float midpoint[], float rvalue[], BoundingBoxf *box, float *mat )
+inline float calcPoint ( float halfA[], float b[], float btb, float midpoint[], float rvalue[], BoundingBoxf *box, float *mat )
 {
 	float newB [ 3 ];
 	float a [ 3 ] [ 3 ];
