@@ -83,7 +83,7 @@ m=6, n=5 (m > n):               m=5, n=6 (m < n):
 Here vi and ui are vectors which form H(i) and G(i), and d and e -
 are the diagonal and off-diagonal elements of matrix B.
 *************************************************************************/
-void rmatrixbd(ap::real_2d_array& a,
+inline void rmatrixbd(ap::real_2d_array& a,
      int m,
      int n,
      ap::real_1d_array& tauq,
@@ -111,7 +111,7 @@ Output parameters:
   -- ALGLIB --
      Copyright 2005 by Bochkanov Sergey
 *************************************************************************/
-void rmatrixbdunpackq(const ap::real_2d_array& qp,
+inline void rmatrixbdunpackq(const ap::real_2d_array& qp,
      int m,
      int n,
      const ap::real_1d_array& tauq,
@@ -148,7 +148,7 @@ Output parameters:
   -- ALGLIB --
      Copyright 2005 by Bochkanov Sergey
 *************************************************************************/
-void rmatrixbdmultiplybyq(const ap::real_2d_array& qp,
+inline void rmatrixbdmultiplybyq(const ap::real_2d_array& qp,
      int m,
      int n,
      const ap::real_1d_array& tauq,
@@ -180,7 +180,7 @@ Output parameters:
   -- ALGLIB --
      Copyright 2005-2007 by Bochkanov Sergey
 *************************************************************************/
-void rmatrixbdunpackpt(const ap::real_2d_array& qp,
+inline void rmatrixbdunpackpt(const ap::real_2d_array& qp,
      int m,
      int n,
      const ap::real_1d_array& taup,
@@ -217,7 +217,7 @@ Output parameters:
   -- ALGLIB --
      Copyright 2005-2007 by Bochkanov Sergey
 *************************************************************************/
-void rmatrixbdmultiplybyp(const ap::real_2d_array& qp,
+inline void rmatrixbdmultiplybyp(const ap::real_2d_array& qp,
      int m,
      int n,
      const ap::real_1d_array& taup,
@@ -250,7 +250,7 @@ Output parameters:
   -- ALGLIB --
      Copyright 2005-2007 by Bochkanov Sergey
 *************************************************************************/
-void rmatrixbdunpackdiagonals(const ap::real_2d_array& b,
+inline void rmatrixbdunpackdiagonals(const ap::real_2d_array& b,
      int m,
      int n,
      bool& isupper,
@@ -262,7 +262,7 @@ void rmatrixbdunpackdiagonals(const ap::real_2d_array& b,
 Obsolete 1-based subroutine.
 See RMatrixBD for 0-based replacement.
 *************************************************************************/
-void tobidiagonal(ap::real_2d_array& a,
+inline void tobidiagonal(ap::real_2d_array& a,
      int m,
      int n,
      ap::real_1d_array& tauq,
@@ -273,7 +273,7 @@ void tobidiagonal(ap::real_2d_array& a,
 Obsolete 1-based subroutine.
 See RMatrixBDUnpackQ for 0-based replacement.
 *************************************************************************/
-void unpackqfrombidiagonal(const ap::real_2d_array& qp,
+inline void unpackqfrombidiagonal(const ap::real_2d_array& qp,
      int m,
      int n,
      const ap::real_1d_array& tauq,
@@ -285,7 +285,7 @@ void unpackqfrombidiagonal(const ap::real_2d_array& qp,
 Obsolete 1-based subroutine.
 See RMatrixBDMultiplyByQ for 0-based replacement.
 *************************************************************************/
-void multiplybyqfrombidiagonal(const ap::real_2d_array& qp,
+inline void multiplybyqfrombidiagonal(const ap::real_2d_array& qp,
      int m,
      int n,
      const ap::real_1d_array& tauq,
@@ -300,7 +300,7 @@ void multiplybyqfrombidiagonal(const ap::real_2d_array& qp,
 Obsolete 1-based subroutine.
 See RMatrixBDUnpackPT for 0-based replacement.
 *************************************************************************/
-void unpackptfrombidiagonal(const ap::real_2d_array& qp,
+inline void unpackptfrombidiagonal(const ap::real_2d_array& qp,
      int m,
      int n,
      const ap::real_1d_array& taup,
@@ -312,7 +312,7 @@ void unpackptfrombidiagonal(const ap::real_2d_array& qp,
 Obsolete 1-based subroutine.
 See RMatrixBDMultiplyByP for 0-based replacement.
 *************************************************************************/
-void multiplybypfrombidiagonal(const ap::real_2d_array& qp,
+inline void multiplybypfrombidiagonal(const ap::real_2d_array& qp,
      int m,
      int n,
      const ap::real_1d_array& taup,
@@ -327,7 +327,7 @@ void multiplybypfrombidiagonal(const ap::real_2d_array& qp,
 Obsolete 1-based subroutine.
 See RMatrixBDUnpackDiagonals for 0-based replacement.
 *************************************************************************/
-void unpackdiagonalsfrombidiagonal(const ap::real_2d_array& b,
+inline void unpackdiagonalsfrombidiagonal(const ap::real_2d_array& b,
      int m,
      int n,
      bool& isupper,
@@ -413,7 +413,7 @@ m=6, n=5 (m > n):               m=5, n=6 (m < n):
 Here vi and ui are vectors which form H(i) and G(i), and d and e -
 are the diagonal and off-diagonal elements of matrix B.
 *************************************************************************/
-void rmatrixbd(ap::real_2d_array& a,
+inline void rmatrixbd(ap::real_2d_array& a,
      int m,
      int n,
      ap::real_1d_array& tauq,
