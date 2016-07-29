@@ -61,7 +61,7 @@ v(i) = 1, v(i+1:n-1) stored in A(i,i+1:n-1).
   -- ALGLIB --
      Copyright 2005-2007 by Bochkanov Sergey
 *************************************************************************/
-void rmatrixlq(ap::real_2d_array& a, int m, int n, ap::real_1d_array& tau);
+inline void rmatrixlq(ap::real_2d_array& a, int m, int n, ap::real_1d_array& tau);
 
 
 /*************************************************************************
@@ -84,7 +84,7 @@ Output parameters:
   -- ALGLIB --
      Copyright 2005 by Bochkanov Sergey
 *************************************************************************/
-void rmatrixlqunpackq(const ap::real_2d_array& a,
+inline void rmatrixlqunpackq(const ap::real_2d_array& a,
      int m,
      int n,
      const ap::real_1d_array& tau,
@@ -107,7 +107,7 @@ Output parameters:
   -- ALGLIB --
      Copyright 2005 by Bochkanov Sergey
 *************************************************************************/
-void rmatrixlqunpackl(const ap::real_2d_array& a,
+inline void rmatrixlqunpackl(const ap::real_2d_array& a,
      int m,
      int n,
      ap::real_2d_array& l);
@@ -117,7 +117,7 @@ void rmatrixlqunpackl(const ap::real_2d_array& a,
 Obsolete 1-based subroutine
 See RMatrixLQ for 0-based replacement.
 *************************************************************************/
-void lqdecomposition(ap::real_2d_array& a,
+inline void lqdecomposition(ap::real_2d_array& a,
      int m,
      int n,
      ap::real_1d_array& tau);
@@ -127,7 +127,7 @@ void lqdecomposition(ap::real_2d_array& a,
 Obsolete 1-based subroutine
 See RMatrixLQUnpackQ for 0-based replacement.
 *************************************************************************/
-void unpackqfromlq(const ap::real_2d_array& a,
+inline void unpackqfromlq(const ap::real_2d_array& a,
      int m,
      int n,
      const ap::real_1d_array& tau,
@@ -138,7 +138,7 @@ void unpackqfromlq(const ap::real_2d_array& a,
 /*************************************************************************
 Obsolete 1-based subroutine
 *************************************************************************/
-void lqdecompositionunpacked(ap::real_2d_array a,
+inline void lqdecompositionunpacked(ap::real_2d_array a,
      int m,
      int n,
      ap::real_2d_array& l,

@@ -111,7 +111,7 @@ History:
      Courant Institute, Argonne National Lab, and Rice University
      October 31, 1999.
 *************************************************************************/
-bool rmatrixbdsvd(ap::real_1d_array& d,
+inline bool rmatrixbdsvd(ap::real_1d_array& d,
      ap::real_1d_array e,
      int n,
      bool isupper,
@@ -136,7 +136,7 @@ History:
      Courant Institute, Argonne National Lab, and Rice University
      October 31, 1999.
 *************************************************************************/
-bool bidiagonalsvddecomposition(ap::real_1d_array& d,
+inline bool bidiagonalsvddecomposition(ap::real_1d_array& d,
      ap::real_1d_array e,
      int n,
      bool isupper,
@@ -177,7 +177,7 @@ http://www.fsf.org/licensing/licenses
 
 //#include <stdafx.h>
 
-static bool bidiagonalsvddecompositioninternal(ap::real_1d_array& d,
+inline static bool bidiagonalsvddecompositioninternal(ap::real_1d_array& d,
      ap::real_1d_array e,
      int n,
      bool isupper,
@@ -191,9 +191,9 @@ static bool bidiagonalsvddecompositioninternal(ap::real_1d_array& d,
      ap::real_2d_array& vt,
      int vstart,
      int ncvt);
-static double extsignbdsqr(double a, double b);
-static void svd2x2(double f, double g, double h, double& ssmin, double& ssmax);
-static void svdv2x2(double f,
+inline static double extsignbdsqr(double a, double b);
+inline static void svd2x2(double f, double g, double h, double& ssmin, double& ssmax);
+inline static void svdv2x2(double f,
      double g,
      double h,
      double& ssmin,
@@ -281,7 +281,7 @@ History:
      Courant Institute, Argonne National Lab, and Rice University
      October 31, 1999.
 *************************************************************************/
-bool rmatrixbdsvd(ap::real_1d_array& d,
+inline bool rmatrixbdsvd(ap::real_1d_array& d,
      ap::real_1d_array e,
      int n,
      bool isupper,
@@ -322,7 +322,7 @@ History:
      Courant Institute, Argonne National Lab, and Rice University
      October 31, 1999.
 *************************************************************************/
-bool bidiagonalsvddecomposition(ap::real_1d_array& d,
+inline bool bidiagonalsvddecomposition(ap::real_1d_array& d,
      ap::real_1d_array e,
      int n,
      bool isupper,
@@ -747,7 +747,7 @@ static bool bidiagonalsvddecompositioninternal(ap::real_1d_array& d,
             // Run convergence test in forward direction
             // First apply standard test to bottom of matrix
             //
-            if( fabs(e(m-1))<=fabs(tol)*fabs(d(m))||tol<0&&fabs(e(m-1))<=thresh )
+            if( fabs(e(m-1))<=fabs(tol)*fabs(d(m))||(tol<0&&fabs(e(m-1))<=thresh) )
             {
                 e(m-1) = 0;
                 continue;
@@ -787,7 +787,7 @@ static bool bidiagonalsvddecompositioninternal(ap::real_1d_array& d,
             // Run convergence test in backward direction
             // First apply standard test to top of matrix
             //
-            if( fabs(e(ll))<=fabs(tol)*fabs(d(ll))||tol<0&&fabs(e(ll))<=thresh )
+            if( fabs(e(ll))<=fabs(tol)*fabs(d(ll))||(tol<0&&fabs(e(ll))<=thresh) )
             {
                 e(ll) = 0;
                 continue;
