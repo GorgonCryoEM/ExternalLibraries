@@ -46,6 +46,7 @@ using std::string;
 using std::stringstream;
 //#include "log.h" //EMAN2 specific
 #include <iostream>
+#include <stdio.h>
 
 using std::cout; //Used to replace log.h stuff
 using std::endl;
